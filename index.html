@@ -1,13 +1,140 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="bn">
 <head>
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-  <title>Hello, World!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>এক্সক্লুসিভ পোর্টাল | স্বাগতম</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background: radial-gradient(circle at top left, #1e1b4b, #0f172a, #020617);
+        }
+        .glow-effect {
+            box-shadow: 0 0 50px -10px rgba(239, 68, 68, 0.3);
+        }
+        .pulse-btn {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+    </style>
 </head>
-<body>
-  <h1>
-    Hello, World!
-  </h1>
+<body class="min-h-screen flex items-center justify-center m-0 p-0 overflow-hidden text-slate-100">
+
+    <!-- PROPOSAL / LANDING CARD CONTAINER -->
+    <main id="proposal-card" class="max-w-xl w-full mx-4 bg-slate-900/90 backdrop-blur-xl border border-slate-800 rounded-3xl p-6 sm:p-10 text-center glow-effect shadow-2xl relative overflow-hidden transition-all duration-500">
+        
+        <!-- Background Glows -->
+        <div class="absolute -top-20 -left-20 w-40 h-40 bg-red-600/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-20 -right-20 w-40 h-40 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- Header Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-red-500/10 border border-red-500/30 rounded-full text-red-400 text-xs sm:text-sm font-semibold mb-6">
+            <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+            🔥 স্পেশাল অ্যাক্সেস তৈরি
+        </div>
+
+        <!-- Title & Subtitle -->
+        <h1 class="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
+            আপনি কি সেরা অভিজ্ঞতা উপভোগ করতে প্রস্তুত?
+        </h1>
+        
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed mb-8">
+            আমাদের এক্সক্লুসিভ কালেকশন এবং প্রিমিয়াম কন্টেন্ট এখানেই উপভোগ করার জন্য প্রবেশ বাটনে ক্লিক করুন।
+        </p>
+
+        <!-- Feature Points -->
+        <div class="grid grid-cols-2 gap-3 mb-8 text-left text-xs sm:text-sm">
+            <div class="flex items-center gap-2.5 bg-slate-800/50 p-3 rounded-xl border border-slate-700/50">
+                <i class="fa-solid fa-bolt text-amber-400"></i>
+                <span>সুপারফাস্ট স্পিড</span>
+            </div>
+            <div class="flex items-center gap-2.5 bg-slate-800/50 p-3 rounded-xl border border-slate-700/50">
+                <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+                <span>নিরাপদ অ্যাক্সেস</span>
+            </div>
+            <div class="flex items-center gap-2.5 bg-slate-800/50 p-3 rounded-xl border border-slate-700/50">
+                <i class="fa-solid fa-crown text-yellow-400"></i>
+                <span>প্রিমিয়াম কন্টেন্ট</span>
+            </div>
+            <div class="flex items-center gap-2.5 bg-slate-800/50 p-3 rounded-xl border border-slate-700/50">
+                <i class="fa-solid fa-mobile-screen-button text-sky-400"></i>
+                <span>মোবাইল ফ্রেন্ডলি</span>
+            </div>
+        </div>
+
+        <!-- Proposal Button (Triggers Iframe) -->
+        <div class="space-y-4">
+            <button onclick="openIframe()" 
+                    class="pulse-btn w-full py-4 px-6 bg-gradient-to-r from-red-600 via-amber-600 to-red-600 hover:from-red-500 hover:to-amber-500 text-white font-bold text-lg rounded-2xl shadow-xl transition-all duration-300 flex items-center justify-center gap-3 group">
+                <span>ওয়েবসাইট এখানেই দেখুন</span>
+                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+            </button>
+
+            <p class="text-xs text-slate-500">
+                ক্লিক করলে সরাসরি ফুল-স্ক্রিনে সাইটটি লোড হবে
+            </p>
+        </div>
+
+    </main>
+
+    <!-- FULL SCREEN IFRAME CONTAINER (Initially Hidden) -->
+    <div id="iframe-wrapper" class="fixed inset-0 w-full h-full bg-black hidden z-50">
+        
+        <!-- Top Bar for Direct Link Fallback (If Iframe gets blocked) -->
+        <div class="absolute top-2 right-2 z-10 flex gap-2">
+            <a href="https://sabbir5.liveblog365.com" target="_blank" class="bg-slate-800/80 hover:bg-slate-700 text-xs text-slate-300 px-3 py-1.5 rounded-lg border border-slate-700 backdrop-blur-md">
+                নতুন ট্যাবে খুলুন <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+            </a>
+            <button onclick="closeIframe()" class="bg-red-600/80 hover:bg-red-600 text-xs text-white px-3 py-1.5 rounded-lg border border-red-500 backdrop-blur-md">
+                বন্ধ করুন <i class="fa-solid fa-xmark ml-1"></i>
+            </button>
+        </div>
+
+        <!-- The Fullscreen Iframe -->
+        <iframe id="site-frame" 
+                src="" 
+                class="w-full h-full border-0" 
+                allow="fullscreen"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups">
+        </iframe>
+    </div>
+
+    <!-- JavaScript to Handle Display -->
+    <script>
+        function openIframe() {
+            const proposalCard = document.getElementById('proposal-card');
+            const iframeWrapper = document.getElementById('iframe-wrapper');
+            const siteFrame = document.getElementById('site-frame');
+
+            // Set source only on click to optimize loading
+            siteFrame.src = "https://sabbir5.liveblog365.com";
+
+            // Hide proposal card and show fullscreen iframe
+            proposalCard.classList.add('hidden');
+            iframeWrapper.classList.remove('hidden');
+        }
+
+        function closeIframe() {
+            const proposalCard = document.getElementById('proposal-card');
+            const iframeWrapper = document.getElementById('iframe-wrapper');
+            const siteFrame = document.getElementById('site-frame');
+
+            siteFrame.src = ""; // Clear src
+            iframeWrapper.classList.add('hidden');
+            proposalCard.classList.remove('hidden');
+        }
+    </script>
 </body>
 </html>
