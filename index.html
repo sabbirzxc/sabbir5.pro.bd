@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* Neumorphic Color Variables & Styles */
         :root {
             --bg-color: #e0e5ec;
             --text-main: #334155;
@@ -30,7 +29,6 @@
             color: var(--text-main);
         }
 
-        /* Neumorphic Extruded Card (উপসে ওঠা বাটন/কার্ড) */
         .neu-card {
             background: var(--bg-color);
             box-shadow: 9px 9px 18px var(--shadow-dark),
@@ -38,15 +36,13 @@
             border-radius: 30px;
         }
 
-        /* Neumorphic Inset Box (ভেতরে ডেবে যাওয়া বক্স) */
         .neu-inset {
             background: var(--bg-color);
-            box-shadow: inset 5px 5px 10px var(--shadow-dark),
-                        inset -5px -5px 10px var(--shadow-light);
+            box-shadow: inset 4px 4px 8px var(--shadow-dark),
+                        inset -4px -4px 8px var(--shadow-light);
             border-radius: 16px;
         }
 
-        /* Neumorphic Button (ক্লিকযোগ্য অনুভূতি দেওয়া বাটন) */
         .neu-btn {
             background: var(--bg-color);
             box-shadow: 6px 6px 12px var(--shadow-dark),
@@ -65,7 +61,6 @@
                         inset -4px -4px 8px var(--shadow-light);
         }
 
-        /* Circular Neumorphic Icon Box */
         .neu-icon-circle {
             background: var(--bg-color);
             box-shadow: 6px 6px 12px var(--shadow-dark),
@@ -79,16 +74,16 @@
     <!-- Main Neumorphic Container Card -->
     <main class="max-w-md w-full neu-card p-6 sm:p-8 text-center my-6">
         
-        <!-- Profile / Header Icon -->
-        <div class="flex justify-center mb-6">
-            <div class="w-20 h-20 neu-icon-circle flex items-center justify-center text-slate-600 text-3xl">
-                <i class="fa-solid fa-fire text-red-500"></i>
+        <!-- Header Icon -->
+        <div class="flex justify-center mb-5">
+            <div class="w-16 h-16 neu-icon-circle flex items-center justify-center text-slate-600 text-2xl">
+                <i class="fa-solid fa-lock text-red-500"></i>
             </div>
         </div>
 
         <!-- Badge -->
         <div class="inline-block px-4 py-1.5 neu-inset text-red-500 text-xs font-bold mb-4">
-            🔥 স্পেশাল অ্যাক্সেস তৈরি
+            🔥 প্রিমিয়াম অ্যাক্সেস
         </div>
 
         <!-- Title & Subtitle -->
@@ -97,31 +92,31 @@
         </h1>
         
         <p class="text-slate-500 text-sm leading-relaxed mb-6">
-            আমাদের এক্সক্লুসিভ কালেকশন এবং প্রিমিয়াম কন্টেন্ট উপভোগ করার জন্য আপনাকে আমন্ত্রণ জানানো হচ্ছে।
+            আমাদের এক্সক্লুসিভ কন্টেন্টগুলো সুরক্ষিত। মূল ওয়েবসাইটে প্রবেশ করে আপনার অ্যাকাউন্টে সাইন ইন করুন।
         </p>
 
-        <!-- Feature Points (Inset Styling) -->
-        <div class="grid grid-cols-2 gap-3 mb-8 text-left text-xs font-semibold">
-            <div class="flex items-center gap-2.5 neu-inset p-3.5 text-slate-600">
+        <!-- Feature Points -->
+        <div class="grid grid-cols-2 gap-3 mb-6 text-left text-xs font-semibold">
+            <div class="flex items-center gap-2.5 neu-inset p-3 text-slate-600">
                 <i class="fa-solid fa-bolt text-amber-500"></i>
                 <span>সুপারফাস্ট স্পিড</span>
             </div>
-            <div class="flex items-center gap-2.5 neu-inset p-3.5 text-slate-600">
+            <div class="flex items-center gap-2.5 neu-inset p-3 text-slate-600">
                 <i class="fa-solid fa-shield-halved text-emerald-500"></i>
                 <span>নিরাপদ অ্যাক্সেস</span>
             </div>
-            <div class="flex items-center gap-2.5 neu-inset p-3.5 text-slate-600">
+            <div class="flex items-center gap-2.5 neu-inset p-3 text-slate-600">
                 <i class="fa-solid fa-crown text-yellow-500"></i>
                 <span>প্রিমিয়াম কন্টেন্ট</span>
             </div>
-            <div class="flex items-center gap-2.5 neu-inset p-3.5 text-slate-600">
+            <div class="flex items-center gap-2.5 neu-inset p-3 text-slate-600">
                 <i class="fa-solid fa-mobile-screen-button text-sky-500"></i>
                 <span>মোবাইল ফ্রেন্ডলি</span>
             </div>
         </div>
 
         <!-- Call To Action Button -->
-        <div class="space-y-4">
+        <div class="space-y-5">
             <a href="https://sabbir5.liveblog365.com" 
                target="_blank" 
                rel="noopener noreferrer"
@@ -130,13 +125,28 @@
                 <i class="fa-solid fa-arrow-right text-sm text-slate-500 group-hover:translate-x-1 transition-transform"></i>
             </a>
 
-            <p class="text-xs text-slate-400 font-medium">
-                নিরাপদে ভিজিট করতে উপরের বোতামটিতে ক্লিক করুন
-            </p>
+            <!-- NEW: Login / Signup Instruction Section -->
+            <div class="neu-inset p-4 text-left space-y-2">
+                <div class="flex items-center gap-2 text-slate-700 font-bold text-xs border-b border-slate-300 pb-1.5">
+                    <i class="fa-solid fa-circle-info text-blue-500"></i>
+                    <span>প্রবেশের পরবর্তী নির্দেশনা:</span>
+                </div>
+                
+                <ul class="text-[12px] text-slate-500 space-y-1.5 leading-relaxed pl-1">
+                    <li class="flex items-start gap-1.5">
+                        <i class="fa-solid fa-check text-emerald-500 text-[10px] mt-1"></i>
+                        <span><strong>অ্যাকাউন্ট থাকলে:</strong> ইমেইল ও পাসওয়ার্ড দিয়ে সরাসরি <b>Sign In</b> করুন।</span>
+                    </li>
+                    <li class="flex items-start gap-1.5">
+                        <i class="fa-solid fa-check text-emerald-500 text-[10px] mt-1"></i>
+                        <span><strong>নতুন হলে:</strong> নিচে থাকা <b>Sign Up</b> থেকে ফ্রিতে অ্যাকাউন্ট তৈরি করে নিন।</span>
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <!-- Footer Note -->
-        <div class="mt-8 pt-4 text-xs text-slate-400 font-medium">
+        <div class="mt-6 pt-2 text-xs text-slate-400 font-medium">
             &copy; সর্বস্বত্ব সংরক্ষিত | sabbir5.liveblog365.com
         </div>
 
